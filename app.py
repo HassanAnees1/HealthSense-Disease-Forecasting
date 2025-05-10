@@ -26,6 +26,7 @@ DISEASES = {
         'ml_model': 'models/diabetes/diabetes.pkl',
         'dl_model': 'models/diabetes_dl_model.h5',
         'scaler': 'models/diabetes/scaler.pkl',
+        'encoder': 'models/diabetes/label_encoders.pkl',
         'features': [
             'Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness',
             'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age'
@@ -35,6 +36,7 @@ DISEASES = {
         'ml_model': 'models/heart_best_model.pkl',
         'dl_model': 'models/heart_dl_model.h5',
         'scaler': 'models/heart_scaler.pkl',
+        'encoder': 'models/heart_encoder.pkl',
         'features': [
             'age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg',
             'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal'
@@ -97,6 +99,8 @@ if st.button("Get Prediction") and input_df is not None:
         if model_type == "Classical ML":
             model = joblib.load(DISEASES[disease]['ml_model'])
             scaler = joblib.load(DISEASES[disease]['scaler'])
+            encoder = joblib.load(DISEASES[disease]['encoder'])
+            input_encoded = encoder.transform(input_df)  
             
             # Scale input data
             input_scaled = scaler.transform(input_df)
