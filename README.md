@@ -1,13 +1,15 @@
 ## HealthSense: Disease Forecasting 🧠🩺
 
-**HealthSense** is an AI‑powered web application that predicts multiple diseases based on patient data and symptoms. The system integrates classical Machine Learning, Deep Learning, and a reinforcement learning prototype, delivering fast, accurate forecasts and interactive visualizations via a Streamlit interface.
+**HealthSense** is an AI‑powered web application that predicts multiple diseases based on patient data and symptoms. The system integrates classical Machine Learning, Deep Learning, and a Reinforcement Learning prototype, delivering fast, accurate forecasts and interactive visualizations via a Streamlit interface.
+
+👉 **[Try it live on Hugging Face Spaces](https://huggingface.co/spaces/HassanAnees1/HealthSense)**
 
 ---
 
 ## 🚀 Key Features
 
-- **Multi‑Disease Support**: Diabetes, Heart Disease, Lung Cancer, Kidney Disease, Hypertension, Breast Cancer and more.
-- **Machine Learning Models**: Decision Tree, Random Forest, SVM, KNN, Logistic Regression for each disease.
+- **Multi‑Disease Support**: Diabetes, Heart Disease, Lung Cancer, Kidney Disease, Hypertension, Breast Cancer, and more.
+- **Machine Learning Models**: Decision Tree, Random Forest, SVM, KNN, Logistic Regression.
 - **Deep Learning Models**: Feedforward ANN for tabular data; CNN for imaging data (e.g., lung scans).
 - **Reinforcement Learning Prototype**: DQN agent simulating adaptive treatment strategies.
 - **Interactive Visualizations**: Probability bars, correlation heatmaps, feature distributions, and Plotly charts.
@@ -16,47 +18,51 @@
 
 ---
 
+## 🧰 Tools & Platforms Used
+
+### Programming & ML Stack
+- Python, NumPy, Pandas, Scikit-learn, XGBoost
+- TensorFlow/Keras for Deep Learning
+- OpenAI Gym & Stable-Baselines3 for RL
+
+### Visualization & UI
+- Streamlit (Web App)
+- Matplotlib, Seaborn, Plotly (Charts)
+- FastAPI (Optional API Backend)
+
+### Development Tools
+- Jupyter Notebooks, Google Colab
+- Git & GitHub
+- VS Code
+
+### Hosting & Demos
+- Hugging Face Spaces – Live Demo
+- Kaggle Datasets – Source Data
+
+---
+
 ## 📦 Project Structure
 
 ```
+
 HealthSense-Disease-Forecasting/
 ├── app/
 │   └── app.py                 # Streamlit application
 ├── data/
 │   ├── raw/                   # Downloaded Kaggle CSV files
-│   │   ├── diabetes.csv
-│   │   ├── heart.csv
-│   │   ├── lung_cancer.csv
-│   │   ├── kidney.csv
-│   │   ├── hypertension.csv
-│   │   └── breast_cancer.csv
 │   └── processed/             # Cleaned and feature‑engineered data
 ├── models/
-│   ├── ml/                    # Serialized ML models
-│   │   ├── diabetes_rf.pkl
-│   │   ├── heart_rf.pkl
-│   │   ├── lung_cancer_rf.pkl
-│   │   ├── kidney_rf.pkl
-│   │   ├── hypertension_rf.pkl
-│   │   └── breast_cancer_rf.pkl
-│   ├── dl/                    # Saved DL models
-│   │   ├── diabetes_ann.h5
-│   │   └── lung_cnn.h5
+│   ├── ml/                    # Serialized ML models (.pkl)
+│   ├── dl/                    # Saved DL models (.h5)
 │   └── rl/                    # RL agent (DQN) checkpoints
-│       └── treatment_agent.zip
-├── notebooks/
-│   ├── EDA.ipynb              # Exploratory Data Analysis
-│   ├── ML_Training.ipynb      # Training and evaluation of ML models
-│   ├── DL_Training.ipynb      # Building and tuning DL models
-│   └── RL_Experiments.ipynb   # Reinforcement Learning prototype
+├── notebooks/                 # EDA, ML, DL, and RL experiments
 ├── src/
 │   ├── preprocess.py          # Data cleaning & feature engineering
-│   ├── train_{disease}.py     # Scripts for ML training per disease (e.g., train_diabetes.py)
-│   ├── train_dl.py            # DL training script
-│   ├── train_rl.py            # RL training script
-│   └── visualizer.py          # Functions to generate charts and plots
+│   ├── train\_\*.py             # Training scripts for ML/DL/RL
+│   └── visualizer.py          # Plot generation
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project overview and instructions
+
 ```
 
 ---
@@ -70,39 +76,40 @@ HealthSense-Disease-Forecasting/
    ```
 
 2. **Create and activate a virtual environment**
+
    ```bash
    python -m venv venv
-   source venv/bin/activate   # Unix/macOS
-   venv\\Scripts\\activate  # Windows
+   # Activate:
+   source venv/bin/activate       # Unix/macOS
+   venv\Scripts\activate          # Windows
    ```
 
 3. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download Kaggle datasets** into `data/raw/`:
-   - diabetes.csv
-   - heart.csv
-   - lung_cancer.csv
-   - kidney.csv
-   - hypertension.csv
-   - breast_cancer.csv
+4. **Download Kaggle datasets into `data/raw/`:**
+
+   * diabetes.csv
+   * heart.csv
+   * lung\_cancer.csv
+   * kidney.csv
+   * hypertension.csv
+   * breast\_cancer.csv
 
    ### Dataset Links
-   -[Diabetes (Pima Indians Diabetes Database)](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database )
 
-   -[Heart Disease (UCI Heart Disease Data)](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)
+   * [Diabetes (Pima Indians)](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+   * [Heart Disease](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)
+   * [Lung Cancer](https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer)
+   * [Chronic Kidney Disease](https://www.kaggle.com/datasets/mansoordaku/ckdisease)
+   * [Hypertension Risk](https://www.kaggle.com/datasets/khan1803115/hypertension-risk-model-main)
+   * [Breast Cancer Wisconsin](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
 
-   -[Lung Cancer](https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer )
+5. **Preprocess and train models**
 
-   -[Chronic Kidney Disease](https://www.kaggle.com/datasets/mansoordaku/ckdisease)
-
-   -[Hypertension Risk Model](https://www.kaggle.com/datasets/khan1803115/hypertension-risk-model-main)
-
-   -[Breast Cancer Wisconsin (Diagnostic)](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data) 
-
-5. **Process data & train models**
    ```bash
    python src/preprocess.py
    python src/train_diabetes.py
@@ -115,7 +122,8 @@ HealthSense-Disease-Forecasting/
    python src/train_rl.py
    ```
 
-6. **Run the Streamlit application**
+6. **Run the Streamlit app locally**
+
    ```bash
    streamlit run app/app.py
    ```
@@ -124,20 +132,23 @@ HealthSense-Disease-Forecasting/
 
 ## 👨‍💻 Team & Contacts
 
-- **Hassan Anees** – Project Coordinator, DL & RL, Visualization  
-  LinkedIn: https://www.linkedin.com/in/hassananees
-- **Adham [Last Name]** – Data Engineering & ML Training  
-  LinkedIn: https://www.linkedin.com/in/adham_profile
-- **Kirols [Last Name]** – Backend & Frontend Integration, Streamlit UI  
-  LinkedIn: https://www.linkedin.com/in/kirols_profile
+* **Hassan Anees** – Project Lead, DL & RL, Visualization
+  [LinkedIn](https://www.linkedin.com/in/hassananees)
 
-Feel free to connect with us on LinkedIn for any questions or collaboration! 🌐
+* **Adham \[Last Name]** – Data Engineering & ML
+  [LinkedIn](https://www.linkedin.com/in/adham_profile)
+
+* **Kirols \[Last Name]** – Backend, UI Integration
+  [LinkedIn](https://www.linkedin.com/in/kirols_profile)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for full details.
 
-**Made with ❤️ by Team HealthSense**
+---
 
+> Made with ❤️ by Team HealthSense – [Try it on Hugging Face](https://huggingface.co/spaces/HassanAnees1/HealthSense)
+
+---
