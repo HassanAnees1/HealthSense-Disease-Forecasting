@@ -2,7 +2,7 @@
 
 **HealthSense** is an AI‑powered web application that predicts multiple diseases based on patient data and symptoms. The system integrates classical Machine Learning, Deep Learning, and a Reinforcement Learning prototype, delivering fast, accurate forecasts and interactive visualizations via a Streamlit interface.
 
-👉 **[Try it live on Hugging Face Spaces](https://huggingface.co/spaces/HassanAnees1/HealthSense)**
+👉 **[Try it live on Hugging Face Spaces](https://huggingface.co/spaces/HassanAnees/HealthSense-Forecasting)**
 
 ---
 
@@ -149,6 +149,6 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for f
 
 ---
 
-> Made with ❤️ by Team HealthSense – [Try it on Hugging Face](https://huggingface.co/spaces/HassanAnees1/HealthSense)
+> Made with ❤️ by Team HealthSense – [Try it on Hugging Face](https://huggingface.co/spaces/HassanAnees/HealthSense-Forecasting)
 
 ---
